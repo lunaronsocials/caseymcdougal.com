@@ -602,59 +602,58 @@
     }
     .kit-list { display: flex; flex-direction: column; gap: 0.75rem; }
     .kit-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
       padding: 0.75rem;
       background: rgba(0,0,0,0.02);
       border-radius: 12px;
-      transition: all 0.3s;
+      transition: background 0.2s;
+      cursor: pointer;
     }
     .kit-item:hover { background: rgba(0,113,227,0.05); }
+    .kit-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .kit-icon {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--accent);
+      width: 22px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0,113,227,0.08);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .kit-text { flex: 1; min-width: 0; }
+    .kit-name {
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+    .kit-desc {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      margin-top: 0.1rem;
+    }
+    .chevron {
+      font-size: 0.65rem;
+      color: var(--text-secondary);
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+    .kit-item.expanded .chevron { transform: rotate(180deg); }
     .kit-dropdown {
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.3s ease;
-      margin-top: 0;
     }
     .kit-item.expanded .kit-dropdown {
       max-height: 400px;
       margin-top: 0.75rem;
     }
-    .kit-item.expanded .chevron {
-      transform: rotate(180deg);
-    }
-    .chevron {
-      transition: transform 0.3s ease;
-      font-size: 0.75rem;
-      color: var(--text-secondary);
-      margin-left: auto;
-    }
-    .hidden {
-      display: none !important;
-    }
-    .kit-header {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      width: 100%;
-      cursor: pointer;
-    }
-    .kit-name {
-      font-weight: 600;
-      font-size: 0.9rem;
-      color: var(--text);
-    }
-    .kit-desc {
-      font-size: 0.8rem;
-      color: var(--text-secondary);
-      display: block;
-      margin-top: 0.15rem;
-    }
-    .kit-icon { font-size: 0.75rem; font-weight: 700; color: var(--accent); width: 24px; height: 24px; display: inline-flex; align-items: center; justify-content: center; background: rgba(0,113,227,0.08); border-radius: 50%; flex-shrink: 0; }
-    .kit-text { display: flex; flex-direction: column; gap: 0.15rem; }
-    .kit-text strong { font-size: 0.85rem; font-weight: 600; color: var(--text); }
-    .kit-text span { font-size: 0.8rem; color: var(--text-secondary); }
     .subscribe-input-wrap {
       display: flex;
       gap: 0.75rem;
@@ -902,9 +901,8 @@
         </div>
         <p class="subscribe-note">Free starter kit + early access to the course when it drops. Unsubscribe anytime.</p>
       </form>
-      <p style="margin-top: 1rem; font-size: 0.82rem; color: var(--text-secondary); text-align: center;">Built by <a href="https://twitter.com/caseymcdougal" target="_blank" style="color: var(--accent); font-weight: 500;">@caseymcdougal</a> — 18 y/o, 158 sites, $0 revenue. Now teaching what I learned.</p>
       <div class="kit-preview" style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border);">
-        <h4 style="font-size: 0.9rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--text-secondary);">What's inside (click to preview):</h4>
+        <h4 style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--text-secondary);">What's inside:</h4>
         <div class="kit-list">
           <div class="kit-item" onclick="this.classList.toggle('expanded')">
             <div class="kit-header">
