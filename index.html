@@ -1012,79 +1012,79 @@
       <!-- Kit 01 — LIVE -->
       <div class="kit-card">
         <div class="kit-card-head"><span class="id">kit_01</span><span class="kit-status live">live</span></div>
-        <h3>No-Code Automation Starter Kit</h3>
-        <p>5 n8n workflows that would've taken me 158 sites to figure out. The exact pipeline I run, broken into pieces you can fork.</p>
+        <h3>158 Sites, $0: The Vantage Teardown</h3>
+        <p>The full autopsy of my failed lead-gen pipeline. Every workflow, prompt, and pitch — plus a written post-mortem of why it broke at <em>conversion</em>, not code. The failure is the moat: you can't drag-and-drop scar tissue.</p>
         <div class="kit-preview" style="margin-top: 0.25rem;">
-        <h4 style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--text-secondary);">What's inside:</h4>
+        <h4 style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--text-secondary); font-family: var(--mono);">inside the teardown:</h4>
         <div class="kit-list">
           <div class="kit-item" onclick="this.classList.toggle('expanded')">
             <div class="kit-header">
               <span class="kit-icon">[01]</span>
               <div class="kit-text">
-                <div class="kit-name">Scrape → Qualify</div>
-                <div class="kit-desc">Find leads anywhere, auto-filter by criteria</div>
+                <div class="kit-name">The full pipeline (n8n + code)</div>
+                <div class="kit-desc">Workflow exports, scraper config, deploy script — fork the whole thing</div>
               </div>
               <span class="chevron">▼</span>
             </div>
             <div class="kit-dropdown">
-              <img src="assets/screenshots/Workflow1.png" alt="Scrape → Qualify workflow" style="width: 100%; border-radius: 12px; border: 1px solid var(--border); margin-top: 0.5rem;">
+              <p style="font-size: 0.82rem; color: var(--text-secondary); padding: 0.5rem 0 0.25rem; line-height: 1.6;">Firecrawl → Gemini → batch deploy. The exact node graph and the glue code that templates leave out: rate-limit handling, retry logic, dedupe, the JSON schema I landed on after site #40.</p>
             </div>
           </div>
           <div class="kit-item" onclick="this.classList.toggle('expanded')">
             <div class="kit-header">
               <span class="kit-icon">[02]</span>
               <div class="kit-text">
-                <div class="kit-name">Enrich → Store</div>
-                <div class="kit-desc">Append data, save to Sheets/Airtable</div>
+                <div class="kit-name">The prompt vault</div>
+                <div class="kit-desc">Every LLM prompt I shipped, every variant, with notes on what broke</div>
               </div>
               <span class="chevron">▼</span>
             </div>
             <div class="kit-dropdown">
-              <img src="assets/screenshots/Workflow2.png" alt="Enrich → Store workflow" style="width: 100%; border-radius: 12px; border: 1px solid var(--border); margin-top: 0.5rem;">
+              <p style="font-size: 0.82rem; color: var(--text-secondary); padding: 0.5rem 0 0.25rem; line-height: 1.6;">Industry-classifier prompts, copy-generation prompts, the one that hallucinated phone numbers, the one that finally stopped. With diffs so you can see how I got from v1 to v9.</p>
             </div>
           </div>
           <div class="kit-item" onclick="this.classList.toggle('expanded')">
             <div class="kit-header">
               <span class="kit-icon">[03]</span>
               <div class="kit-text">
-                <div class="kit-name">Outreach → Schedule</div>
-                <div class="kit-desc">Trigger emails/messages at the right time</div>
+                <div class="kit-name">The pitch graveyard</div>
+                <div class="kit-desc">124 real pitches, redacted, annotated with what I'd change now</div>
               </div>
               <span class="chevron">▼</span>
             </div>
             <div class="kit-dropdown">
-              <img src="assets/screenshots/Workflow3.png" alt="Outreach → Schedule workflow" style="width: 100%; border-radius: 12px; border: 1px solid var(--border); margin-top: 0.5rem;">
+              <p style="font-size: 0.82rem; color: var(--text-secondary); padding: 0.5rem 0 0.25rem; line-height: 1.6;">The cold emails, the DMs, the follow-ups. Subject lines, open rates where I have them, replies (rare), and the one near-close that taught me distribution beats automation.</p>
             </div>
           </div>
           <div class="kit-item" onclick="this.classList.toggle('expanded')">
             <div class="kit-header">
               <span class="kit-icon">[04]</span>
               <div class="kit-text">
-                <div class="kit-name">Follow-up → Nurture</div>
-                <div class="kit-desc">Sequence for non-responders (never ghost again)</div>
+                <div class="kit-name">Where it actually broke</div>
+                <div class="kit-desc">A written post-mortem — not "iterate faster," real failure modes</div>
               </div>
               <span class="chevron">▼</span>
             </div>
             <div class="kit-dropdown">
-              <img src="assets/screenshots/Workflow4.png" alt="Follow-up → Nurture workflow" style="width: 100%; border-radius: 12px; border: 1px solid var(--border); margin-top: 0.5rem;">
+              <p style="font-size: 0.82rem; color: var(--text-secondary); padding: 0.5rem 0 0.25rem; line-height: 1.6;">The technical pipeline worked. The business pipeline didn't. This is the section that nobody on n8n.io can write because they didn't ship the failure first. Bottlenecks, false signals, the tells I missed.</p>
             </div>
           </div>
           <div class="kit-item" onclick="this.classList.toggle('expanded')">
             <div class="kit-header">
               <span class="kit-icon">[05]</span>
               <div class="kit-text">
-                <div class="kit-name">Report → Track</div>
-                <div class="kit-desc">Dashboard view of what's working</div>
+                <div class="kit-name">Site #1, redo</div>
+                <div class="kit-desc">If I started over tomorrow — the pipeline I'd actually run</div>
               </div>
               <span class="chevron">▼</span>
             </div>
             <div class="kit-dropdown">
-              <img src="assets/screenshots/Workflow5.png" alt="Report → Track workflow" style="width: 100%; border-radius: 12px; border: 1px solid var(--border); margin-top: 0.5rem;">
+              <p style="font-size: 0.82rem; color: var(--text-secondary); padding: 0.5rem 0 0.25rem; line-height: 1.6;">The smaller, slower, distribution-first version. What I'd cut, what I'd keep, where I'd put the human in the loop, and the one metric I'd watch instead of "sites deployed."</p>
             </div>
           </div>
         </div>
         </div>
-        <div class="kit-meta"><span>n8n</span><span>5 workflows</span><span>fork-ready</span></div>
+        <div class="kit-meta"><span>n8n export</span><span>124 pitches</span><span>post-mortem</span></div>
       </div>
 
       <!-- Kit 02 — SOON -->
