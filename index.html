@@ -673,6 +673,101 @@
       color: var(--text-secondary);
       text-align: center;
     }
+    /* Kits Library */
+    .kits-intro {
+      max-width: 640px;
+      margin: 0 auto 2.5rem;
+      text-align: center;
+    }
+    .kits-intro form { margin-top: 1rem; }
+    .kits-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+    @media (max-width: 768px) { .kits-grid { grid-template-columns: 1fr; } }
+    .kit-card {
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(14px);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      transition: all 0.3s var(--ease);
+      position: relative;
+      overflow: hidden;
+    }
+    .kit-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(12,12,13,0.18);
+    }
+    .kit-card.locked {
+      background: rgba(245,243,238,0.5);
+      opacity: 0.78;
+    }
+    .kit-card.locked:hover { transform: none; box-shadow: none; }
+    .kit-card-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--text-secondary);
+      letter-spacing: 0;
+    }
+    .kit-card-head .id { color: var(--accent-hot); }
+    .kit-status {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      padding: 0.18rem 0.5rem;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .kit-status.live {
+      color: var(--accent-hot);
+      border-color: rgba(255,90,31,0.4);
+      background: rgba(255,90,31,0.06);
+    }
+    .kit-status.soon {
+      color: var(--text-secondary);
+    }
+    .kit-status.open {
+      color: var(--text);
+    }
+    .kit-card h3 {
+      font-family: var(--mono);
+      font-size: 1.05rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+    }
+    .kit-card > p {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+    .kit-meta {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-top: auto;
+      padding-top: 0.75rem;
+      border-top: 1px dashed var(--border);
+    }
+    .kit-meta span {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      color: var(--text-secondary);
+    }
+    .kit-meta span::before { content: '· '; color: var(--accent-hot); }
+    .kit-meta span:first-child::before { content: ''; }
     /* Connect */
     .connect-grid {
       display: flex;
@@ -893,24 +988,33 @@
     </div>
   </section>
 
-  <!-- Subscribe -->
+  <!-- Subscribe / Free Kits Library -->
   <section id="subscribe">
     <div class="section-header">
-      <div class="section-eyebrow">newsletter</div>
-      <h2>Get the No-Code Automation Starter Kit</h2>
-      <p>5 n8n workflows that would've taken me 158 sites to figure out. Free. Join 97 others already inside.</p>
+      <div class="section-eyebrow">free kits</div>
+      <h2>A library, not a launch.</h2>
+      <p>Free workflow kits for builders. One email unlocks every kit — current and future. No upsell, no funnels.</p>
     </div>
-    <div class="subscribe-card">
+    <div class="kits-intro subscribe-card">
       <form id="newsletter-form" action="https://assets.mailerlite.com/jsonp/2241553/forms/183689485189383868/subscribe" method="post" target="_blank">
         <input type="hidden" name="ml-submit" value="1">
         <input type="hidden" name="anticsrf" value="true">
         <div class="subscribe-input-wrap">
           <input type="email" name="fields[email]" placeholder="your@email.com" required class="subscribe-input" aria-label="Email">
-          <button type="submit" class="btn btn-primary" onclick="setTimeout(function(){ window.location.href='thank-you.html'; }, 500); return true;">Get Free Templates →</button>
+          <button type="submit" class="btn btn-primary" onclick="setTimeout(function(){ window.location.href='thank-you.html'; }, 500); return true;">unlock the library →</button>
         </div>
-        <p class="subscribe-note">Free starter kit + early access to the course when it drops. Unsubscribe anytime.</p>
+        <p class="subscribe-note">97 builders inside. Paid course later — kits stay free, forever.</p>
       </form>
-      <div class="kit-preview" style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border);">
+    </div>
+
+    <div class="kits-grid">
+
+      <!-- Kit 01 — LIVE -->
+      <div class="kit-card">
+        <div class="kit-card-head"><span class="id">kit_01</span><span class="kit-status live">live</span></div>
+        <h3>No-Code Automation Starter Kit</h3>
+        <p>5 n8n workflows that would've taken me 158 sites to figure out. The exact pipeline I run, broken into pieces you can fork.</p>
+        <div class="kit-preview" style="margin-top: 0.25rem;">
         <h4 style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--text-secondary);">What's inside:</h4>
         <div class="kit-list">
           <div class="kit-item" onclick="this.classList.toggle('expanded')">
@@ -979,7 +1083,26 @@
             </div>
           </div>
         </div>
+        </div>
+        <div class="kit-meta"><span>n8n</span><span>5 workflows</span><span>fork-ready</span></div>
       </div>
+
+      <!-- Kit 02 — SOON -->
+      <div class="kit-card locked">
+        <div class="kit-card-head"><span class="id">kit_02</span><span class="kit-status soon">in the lab</span></div>
+        <h3>AI Outreach Engine</h3>
+        <p>Cold email + enrichment + reply classification, end to end. The thing every agency charges $3k/mo for, in a workflow you own.</p>
+        <div class="kit-meta"><span>n8n</span><span>+ openai</span><span>ships: tbd</span></div>
+      </div>
+
+      <!-- Kit 03 — OPEN CALL -->
+      <a href="https://twitter.com/caseymcdougal" target="_blank" class="kit-card" style="text-decoration:none; color:inherit;">
+        <div class="kit-card-head"><span class="id">kit_03</span><span class="kit-status open">open call</span></div>
+        <h3>What should I build next?</h3>
+        <p>The library grows from real builder problems. Reply on X with the workflow you wish existed — most-requested becomes the next kit.</p>
+        <div class="kit-meta"><span>request →</span><span>@caseymcdougal</span></div>
+      </a>
+
     </div>
   </section>
 
