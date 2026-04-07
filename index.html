@@ -995,16 +995,26 @@
       <h2>A library, not a launch.</h2>
       <p>Free workflow kits for builders. One email unlocks every kit. Current and future. No upsell, no funnels.</p>
     </div>
-    <div class="kits-intro subscribe-card">
-      <form id="newsletter-form" action="https://assets.mailerlite.com/jsonp/2241553/forms/183689485189383868/subscribe" method="post" target="_blank">
-        <input type="hidden" name="ml-submit" value="1">
-        <input type="hidden" name="anticsrf" value="true">
-        <div class="subscribe-input-wrap">
-          <input type="email" name="fields[email]" placeholder="your@email.com" required class="subscribe-input" aria-label="Email">
-          <button type="submit" class="btn btn-primary" onclick="setTimeout(function(){ window.location.href='library.html'; }, 500); return true;">unlock the library →</button>
-        </div>
-        <p class="subscribe-note">97 builders inside. Paid course later. Kits stay free, forever.</p>
-      </form>
+    <div class="kits-intro subscribe-card" style="display:flex; flex-direction:column; align-items:center;">
+      <script async src="https://subscribe-forms.beehiiv.com/embed.js"></script>
+      <iframe src="https://subscribe-forms.beehiiv.com/f05c2d28-67de-4bd4-b1f9-793a4cdce4c7" class="beehiiv-embed" data-test-id="beehiiv-embed" frameborder="0" scrolling="no" style="width: 516px; height: 291px; margin: 0; border-radius: 0; background-color: transparent; box-shadow: 0 0 #0000; max-width: 100%;"></iframe>
+      <p class="subscribe-note" style="margin-top: 0.5rem;">Paid course later. Kits stay free, forever. <a href="library.html" style="color: var(--accent-hot); text-decoration: none; font-weight: 600;">Already subscribed? Enter the library →</a></p>
+      <script>
+        // Beehiiv iframe posts a message on successful subscription. Redirect to the library.
+        window.addEventListener('message', function(e) {
+          if (e.origin && e.origin.indexOf('beehiiv.com') !== -1) {
+            var d = e.data;
+            var isSuccess = d && (
+              d === 'subscribe' ||
+              (typeof d === 'string' && d.toLowerCase().indexOf('success') !== -1) ||
+              (typeof d === 'object' && (d.event === 'subscribe' || d.type === 'subscribe' || d.status === 'success'))
+            );
+            if (isSuccess) {
+              setTimeout(function(){ window.location.href = 'library.html'; }, 800);
+            }
+          }
+        });
+      </script>
     </div>
 
     <div class="kits-grid">
